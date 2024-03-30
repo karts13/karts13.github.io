@@ -21,3 +21,11 @@
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
+
+/*=============== TYPING ANIMATION ===============*/
+var typed = new Typed(".typing",{
+    strings: ["Student", "Web Designer", "Coder", "Video Editor"],
+    typeSpeed: 100,
+    BackSpeed: 100,
+    loop: true
+})
