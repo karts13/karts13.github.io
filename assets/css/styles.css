@@ -200,7 +200,7 @@ body.light-theme{
 }
 
 .light-theme .skills__content,
-.light-theme .services__card,
+.light-theme .projects__card,
 .light-theme .work__card
 .light-theme .testimonial__card
 .light-theme .contact__card{
@@ -578,14 +578,121 @@ body.light-theme{
   color: var(--first-color);
 }
 
-/* Services modal */
+/*=============== PROJECTS ===============*/
+.projects__container{
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
 
+.projects__card{
+  background-color: var(--container-color);
+  padding: 3rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.projects__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: 2.5rem;
+}
+
+.projects__button{
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+  cursor: pointer;
+}
+
+.projects__button:hover .projects__icon{
+  transform: translateX(.25rem);
+}
+
+.projects__icon{
+  font-size: 1rem;
+  transition: .4s;
+}
+
+/* Projects modal */
+.projects__modal{
+  position: fixed;
+  inset: 0;
+  background-color: hsla(var(--second-hue), 28%, 16%, .7);
+  padding: 2rem 1rem;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s;
+  z-index: var(--z-modal);
+}
+
+.projects__modal-content{
+  position: relative;
+  background-color: var(--body-color);
+  padding: 3.5rem 1.5rem 2.5rem;
+  border-radius: 1.5rem;
+}
+
+.projects__modal-title,
+.projects__modal-description{
+  text-align: center;
+}
+
+.projects__modal-title{
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-bottom: 1.5rem;
+}
+
+.projects__modal-description{
+  font-size: var(--small-font-size);
+  margin-bottom: 2rem;
+}
+
+.projects__modal-list{
+  display: grid;
+  row-gap: .75rem;
+}
+
+.projects__modal-item{
+  display: flex;
+  align-items: flex-start;
+  column-gap: .5rem;
+}
+
+.projects__modal-icon{
+  font-size: 1.5rem;
+  color: var(--first-color);
+}
+
+.projects__modal-info{
+  font-size: var(--small-font-size);
+}
+
+.project__modal-button{
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.projects__modal-close{
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  cursor: pointer;
+}
 
 /*Active modal*/
-
-
-/*=============== WORK ===============*/
-
+.active-modal{
+  opacity: 1;
+  visibility: visible;
+}
 
 /* Active item work*/
 
