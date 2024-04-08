@@ -195,6 +195,14 @@ body.light-theme{
   color: var(--title-color);
 }
 
+.light-theme .home__handle{
+  background: linear-gradient(180deg,
+              hsla(250, 66%, 75%, .2),
+              hsla(250, 66%, 75%, 1)
+            );
+  border: 2px solid #000;
+}
+
 .light-theme .about__box{
   box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, .1);
 }
@@ -365,17 +373,45 @@ body.light-theme{
 .home__handle{
   justify-self: center;
   width: 250px;
+  height: 273px;
+  background-size: cover;
+  background: linear-gradient(180deg,
+              hsla(206, 100%, 96%, .2),
+              hsla(206, 100%, 96%, 1)
+            );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 5px 5px 5px rgba(13, 110,0 253, 0.1);
+  animation: animate 7s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+  border: 2px solid #fff;
+}
+
+@keyframes animate {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+/* .home__handle{
+  justify-self: center;
+  width: 250px;
   height: 293px;
   background: linear-gradient(180deg,
-              hsla(var(--first-hue), var(--sat), var(--lig), 1),
-              hsla(var(--first-hue), var(--sat), var(--lig), .2)
+              hsla(var(--first-hue), var(--sat), var(--lig), .2),
+              hsla(var(--first-hue), var(--sat), var(--lig), 1)
             );
   border-radius: 20rem 15rem 20rem 10rem;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
-}
+} */
 
 .home__buttons{
   margin-top: .5rem;
@@ -461,9 +497,13 @@ body.light-theme{
 }
 
 .about__img{
-  width: 220px;
-  border-radius: 1.5rem;
   justify-self: center;
+  width: 220px;
+  display: flex;
+  border-radius: 1.5rem;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .about__data{
@@ -502,7 +542,125 @@ body.light-theme{
 }
 
 /*=============== SKILLS ===============*/
+.skills__container{
+  row-gap: 0;
+}
 
+.skills__header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+}
+
+.skills__icon,
+.skills__arrow{
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.skills__icon{
+  margin-right: 0.75rem;
+}
+
+.skills__title{
+  font-size: var(--h3-font-size);
+}
+
+.skills__subtitle{
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.skills__arrow{
+  margin-left: auto;
+  transition: .4s;
+}
+
+.skills__list{
+  row-gap: 1.5rem;
+  padding-left: 2.7rem;
+}
+
+.skills__titles{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
+
+.skills__name{
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.skills__bar,
+.skills__percentage{
+  height: 5px;
+  border-radius: .25rem;
+}
+
+.skills__bar{
+  background-color: var(--first-hue);
+}
+
+.skills__percentage{
+  display: block;
+  background-color: var(--first-color);
+}
+
+.skills__python{
+  width: 50%;
+}
+
+.skills__cpp{
+  width: 70%;
+}
+
+.skills__html{
+  width: 90%;
+}
+
+.skills__js{
+  width: 30%;
+}
+
+.skills__sql{
+  width: 50%;
+}
+
+.skills__github{
+  width: 80%;
+}
+
+.skills__android{
+  width: 40%;
+}
+
+.skills__tableau{
+  width: 70%;
+}
+
+.skills__figma{
+  width: 10%;
+}
+
+.skills__adobe{
+  width: 75%;
+}
+
+.skills__close .skills__list{
+  height: 0;
+  overflow: hidden;
+}
+
+.skills__open .skills__list{
+  height: max-content;
+  margin-bottom: 2.5rem;
+}
+
+.skills__open .skills__arrow{
+  transform: rotate(-180deg);
+}
 
 /*=============== QUALIFICATION ===============*/
 .qualification__tabs {
