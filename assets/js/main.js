@@ -125,3 +125,23 @@ var typed = new Typed(".typing",{
     BackSpeed: 100,
     loop: true
 })
+
+/*=============== FORM ===============*/
+
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw6ufZDsVJRApoPUECRWVLmjV9yFwvu1mjAd_m1PdwDelFuPpJPtiwkgJ78bAbngmjt/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("msg")
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message sent successfully!"
+        setTimeout(function(){
+            msg.innerHTML = ""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+})

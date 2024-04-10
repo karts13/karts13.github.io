@@ -881,6 +881,7 @@ body.light-theme{
 .contact__info{
   display: grid;
   gap: 1rem;
+  grid-column-gap: 2rem;
 }
 
 .contact__card{
@@ -966,6 +967,35 @@ body.light-theme{
 .contact__form-area textarea{
   resize: none;
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust as needed for vertical spacing */
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--first-color);
+  color: var(--body-color);
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+  transition: .4s;
+}
+
+.contact__send-icon {
+  font-size: 1.25rem;
+  margin-left: 5px; /* Adjust as needed for spacing */
+}
+
+.confirm__msg{
+  color: #61b752;
+  display: block;
+}
+
+
 
 /*=============== FOOTER ===============*/
 

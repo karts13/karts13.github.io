@@ -642,24 +642,24 @@
 
                 <div class="contact__container container grid">
                     <div class="contact__content">
-                        <h3 class="contact__title">Connect with me</h3>
+                        <!-- <h3 class="contact__title">Connect with me</h3> -->
                         
-                        <div class="contact_info">
+                        <div class="contact__info">
                             <div class="contact__card">
                                 <i class='bx bxl-gmail contact__card-icon'></i>
                                 <h3 class="contact__card-title">Email</h3>
                                 <span class="contact__card--data">karthishenoy2014@gmail.com</span>
-        
+                        
                                 <a href="mailto:karthishenoy2014@gmail.com" target="_blank" class="contact__button">
                                     Write me <i class='bx bx-right-arrow-alt contact__button-icon' ></i> 
                                 </a>
                             </div>
-        
+                        
                             <div class="contact__card">
                                 <i class='bx bxl-whatsapp contact__card-icon'></i>
                                 <h3 class="contact__card-title">Whatsapp</h3>
                                 <span class="contact__card--data">+91-7892975634</span>
-        
+                        
                                 <a href="https://api.whatsapp.com/send?phone=7892975634&text=Hello, more information" target="_blank" class="contact__button">
                                     Write me <i class='bx bx-right-arrow-alt contact__button-icon' ></i> 
                                 </a>
@@ -668,25 +668,36 @@
                     </div>
 
                     <div class="contact__content">
-                        <h3 class="contact__title">Write me your project</h3>
+                        <!-- <h3 class="contact__title">Want to connect? My inbox is always open!</h3> -->
 
-                        <form action="" class="contact__form">
+                        <form action="" class="contact__form" name="submit-to-google-sheet">
                             <div class="contact__form-div">
-                                <label for="" class="contact__form-tag">Names</label>
-                                <input type="text" placeholder="Enter your name" class="contact__form-input">
+                                <label for="" class="contact__form-tag">Name</label>
+                                <input type="text" name="Name" placeholder="Enter your name" class="contact__form-input" required>
                             </div>
 
                             <div class="contact__form-div">
-                                <label for="" class="contact__form-tag">Mail</label>
-                                <input type="email" placeholder="Enter your email" class="contact__form-input">
+                                <label for="" class="contact__form-tag">Email</label>
+                                <input type="email" name="Email" placeholder="Enter your email" class="contact__form-input" required>
+                            </div>
+
+                            <div class="contact__form-div">
+                                <label for="" class="contact__form-tag">Subject</label>
+                                <input type="text" name="Subject" placeholder="Enter the subject" class="contact__form-input" required>
                             </div>
 
                             <div class="contact__form-div contact__form-area">
                                 <label for="" class="contact__form-tag">Message</label>
-                                <textarea name="" id="" cols="30" rows="10" placeholder="Write your message" class="contact__form-input"></textarea>
+                                <textarea name="Message" id="" cols="30" rows="10" placeholder="Write your message..." class="contact__form-input"></textarea>
                             </div>
 
-                            <button class="button">Send Message</button>
+                            <span id="msg" class="confirm__msg"></span>
+
+                            <div class="button-container">
+                                <button class="button" type="submit">
+                                  <span>Send Message</span>
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
