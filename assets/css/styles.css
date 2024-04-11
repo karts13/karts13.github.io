@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
+
 :root {
   --header-height: 3.5rem;
 
@@ -92,6 +93,7 @@
 }
 
 /*=============== BASE ===============*/
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -141,6 +143,7 @@ img {
 }
 
 /*=============== THEME ===============*/
+
 .change-theme{
   font-size: 1.25rem;
   cursor: pointer;
@@ -152,6 +155,7 @@ img {
 }
 
 /*========== Variables Light theme ==========*/
+
 body.light-theme{
   --title-color: hsl(var(--second-hue), 15%, 15%);
   --text-color: hsl(var(--second-hue), 8%, 35%);
@@ -227,6 +231,7 @@ body.light-theme{
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
+
 .container {
   max-width: 968px;
   margin-left: 1rem;
@@ -264,6 +269,7 @@ body.light-theme{
 }
 
 /*=============== HEADER & NAV===============*/
+
 .header {
     position: fixed;
     top : 0;
@@ -332,8 +338,8 @@ body.light-theme{
   box-shadow: 0 4px 4px hsla(0, 0%, 4%, .3);
 }
 
-
 /*=============== HOME ===============*/
+
 .home__container{
   position: relative;
   row-gap: 1.5rem;
@@ -366,13 +372,13 @@ body.light-theme{
 }
 
 .home__img{
-  width: 200px;
+  width: 400px;
 }
 
 .home__handle{
   justify-self: center;
   width: 250px;
-  height: 273px;
+  height: 243px;
   background-size: cover;
   background: linear-gradient(180deg,
               hsla(206, 100%, 96%, .2),
@@ -386,6 +392,12 @@ body.light-theme{
   animation: animate 7s ease-in-out infinite;
   transition: all 1s ease-in-out;
   border: 2px solid #fff;
+}
+
+.home__handle .home__img {
+  width: 200%; /* Adjust this as needed */
+  height: auto; /* This ensures the aspect ratio is maintained */
+  display: block; /* Ensures the image behaves properly within the flex container */
 }
 
 @keyframes animate {
@@ -468,6 +480,7 @@ body.light-theme{
 }
 
 /*=============== BUTTONS ===============*/
+
 .button{
   display: inline-block;
   background-color: var(--first-color);
@@ -489,8 +502,8 @@ body.light-theme{
   color: var(--first-color);
 }
 
-
 /*=============== ABOUT ===============*/
+
 .about__container{
   row-gap: 2.5rem;
 }
@@ -541,6 +554,7 @@ body.light-theme{
 }
 
 /*=============== SKILLS ===============*/
+
 .skills__container{
   row-gap: 0;
 }
@@ -671,6 +685,7 @@ body.light-theme{
 }
 
 /*=============== QUALIFICATION ===============*/
+
 .qualification__tabs {
   display: flex;
   justify-content: space-evenly;
@@ -681,8 +696,8 @@ body.light-theme{
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   cursor: pointer;
-  display: inline-block; /* or display: inline; */
-  margin-right: 1rem; /* Adjust spacing between buttons as needed */
+  display: inline-block;
+  margin-right: 1rem;
 }
 
 .qualification__button:hover{
@@ -695,8 +710,9 @@ body.light-theme{
 }
 
 .qualification__data{
+  justify-content: center;
   display: grid;
-  grid-template-columns: 1fr max-content 1fr;
+  grid-template-columns: .75fr max-content 1fr;
   column-gap: 1.5rem;
 }
 
@@ -706,9 +722,13 @@ body.light-theme{
 }
 
 .qualification__subtitle{
-  display: inline;
+  display: inline-block;
   font-size: var(--small-font-size);
   margin-bottom: 1rem;
+}
+
+.qualification__subtitle a {
+  color: inherit;
 }
 
 .qualification__calender{
@@ -745,6 +765,7 @@ body.light-theme{
 }
 
 /*=============== PROJECTS ===============*/
+
 .projects__container{
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
@@ -854,19 +875,8 @@ body.light-theme{
   cursor: pointer;
 }
 
-/*Active modal*/
-.active-modal{
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Active item work*/
-
-
-/* Swiper class */
-
-
 /*=============== CONTACT ===============*/
+
 .contact__container{
   row-gap: 3rem;
   padding-bottom: 3rem;
@@ -996,6 +1006,7 @@ body.light-theme{
 }
 
 /*=============== FOOTER ===============*/
+
 .footer{
   background-color: var(--first-color);
 }
@@ -1045,6 +1056,7 @@ body.light-theme{
 }
 
 /*=============== SCROLL BAR ===============*/
+
 ::-webkit-scrollbar{
   width: .6rem;
   border-radius: .5rem;
@@ -1060,11 +1072,259 @@ body.light-theme{
   background-color: hsl(var(--second-hue), 8%, 20%);
 }
 
+/*Active modal*/
+.active-modal{
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Active item work*/
+
+
+/* Swiper class */
+
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 320px) {
+  .nav__menu{
+    padding: 1rem 1.5rem;
+  }
+  
+  .home__buttons{
+    flex-direction: column;
+  }
 
+  .home__handle{
+    width: 150px;
+    height: 253px;
+  }
+
+  .home__img{
+    width: 130px;
+  }
+
+  .about__info{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills__box{
+    column-gap: 1rem;
+  }
+
+  .skills__name{
+    font-size: var(--small-font-size);
+  }
+}
 
 /* For medium devices */
+@media screen and (min-wudth: 576px) {
+  .nav__menu{
+    width: 328px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
 
+  .about__info{
+    grid-template-columns: repeat(3, 140px);
+    justify-content: center;
+  }
+
+  .about__description{
+    padding: 0 5rem;
+  }
+
+  .skills__container{
+    justify-content: center;
+  }
+
+  .qualification__sections {
+    display: grid;
+    grid-template-columns: 0.6fr;
+    justify-content: center;
+  }
+
+  .projects__container{
+    grid-template-columns: repeat(2, 160px);
+    justify-content: center;
+  }
+
+  .projects__modal-content{
+    width: 500px;
+    padding: 4.5rem 2.5rem 2.5rem;
+  }
+
+  .projects__modal-description{
+    padding: 0 3.5rem;
+  }
+
+  .contact__info{
+    grid-template-columns: 300px;
+    justify-content: center;
+  }
+
+  .contact__form{
+    width: 360px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .contact__container{
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 3rem;
+  }  
+
+  .header {
+    top: 0;
+    bottom: initial;
+    padding: 0 1rem;
+  }
+
+  .contact__form {
+    width: 460px;
+  }
+
+  .contact_inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .qualification__tabs {
+    justify-content: center;
+  }
+
+  .qualification__button {
+    margin: 0 4rem;
+  }
+
+  .qualification__sections {
+    grid-template-columns: 5fr;
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 992px) {
+  .header{
+    padding: 0;
+  }
+
+  .nav__logo {
+    margin-right: auto; /* Pushes the logo to the left */
+  }
+
+  #theme-button {
+    margin-left: auto; /* Pushes the theme button to the right */
+  }
+
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }  
+
+  .section{
+    padding: 6.5rem 0 1rem;
+  }
+
+  .section__title{
+    margin-bottom: 3.5rem;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+
+  .home__handle{
+    width: 290px;
+    height: 300px;
+  }
+  
+  .home__img{
+    width: 220px;
+  }
+
+  .home__social-link{
+    padding: .4rem;
+    font-size: 1.25rem;
+  }
+
+  .home__social::after{
+    transform: rotate(90deg) translate(16px, 0);
+  }
+
+  .home__scroll-icon{
+    font-size: 2rem;
+  }
+
+  .about__container{
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 4rem;
+  }
+
+  .about__img{
+    width: 350px;
+  }
+
+  .about__data{
+    text-align: initial;
+  }
+
+  .about__info{
+    justify-content: initial;
+  }
+
+  .about__box{
+    text-align: center;
+    padding: 1rem 1.25rem;
+  }
+
+  .about__description{
+    padding: 0 4rem 0 0;
+  }
+
+  /* .skills__container{
+    grid-template-columns: repeat(2, 350px);
+    column-gap: 3rem;
+  } */
+
+  .projects__container{
+    grid-template-columns: repeat(4, 192px);
+    column-gap: 5rem;
+  }
+
+  .projects__card{
+    padding: 5rem 2rem 1.5rem;
+  }
+
+  .contact__form {
+    width: 460px;
+  }
+
+  .contact_inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__social-link{
+    font-size: 1.25rem;
+    padding: .4rem;
+    border-radius: .5rem;
+  }
+
+  .qualification__tabs {
+    justify-content: center;
+  }
+
+  .qualification__button {
+    margin: 0 1rem;
+  }
+
+  .qualification__sections {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    grid-template-columns: 5fr;
+  }
+}
