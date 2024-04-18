@@ -7,47 +7,10 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  /*
-        Purple: hsl(250, 66%, 75%)
-        Blue: hsl(207, 90%, 72%)
-        Pink: hsl(356, 66%, 75%)
-        Teal: hsl(174, 63%, 62%)
-  */
 
-  /*
-  --hue-color: 250;
-  --first-color: hsl(var(--hue-color), 69%, 61%);
-  --first-color-second: hsl(var(--hue-color), 69%, 61%);
-  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
-  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-  --title-color: hsl(var(--hue-color), 8%, 15%);
-  --text-color: hsl(var(--hue-color), 8%, 45%);
-  --text-color-light: hsl(var(--hue-color), 8%, 65%);
-  --input-color: hsl(var(--hue-color), 70%, 96%);
-  --body-color: hsl(var(--hue-color), 60%, 99%);
-  --container-color: #fff;
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
-  */
-
-  /*
-  --first-hue: 250;
-  --sat: 66%;
-  --lig: 75%;
-  --second-hue: 219;
-  --first-color: hsl(206, 100%, 96%);
-  --first-color-alt: hsl(var(--first-hue), var(--sat), 71%);
-  --title-color: hsl(var(--second-hue), 15%, 95%);
-  --text-color: hsl(var(--second-hue), 8%, 75%);
-  --text-color-light: hsl(var(--second-hue), 4%, 55%);
-  --body-color: hsl(0, 3%, 14%); 
-  --container-color: hsl(var(--second-hue), 32%, 12%);
-  */
-
-  --first-hue: 250;
-  --sat: 66%;
-  --lig: 75%;
+  --first-hue: 187;
+  --sat: 73%;
+  --lig: 39%;
   --second-hue: 219;
   --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
   --first-color-alt: hsl(var(--first-hue), var(--sat), 71%);
@@ -201,8 +164,8 @@ body.light-theme{
 
 .light-theme .home__handle{
   background: linear-gradient(180deg,
-              hsla(250, 66%, 75%, .2),
-              hsla(250, 66%, 75%, 1)
+              hsla(187, 73%, 39%, .2),
+              hsla(187, 73%, 39%, 1)
             );
   border: 2px solid #000;
 }
@@ -395,9 +358,9 @@ body.light-theme{
 }
 
 .home__handle .home__img {
-  width: 200%; /* Adjust this as needed */
-  height: auto; /* This ensures the aspect ratio is maintained */
-  display: block; /* Ensures the image behaves properly within the flex container */
+  width: 200%; 
+  height: auto; 
+  display: block; 
 }
 
 @keyframes animate {
@@ -1117,7 +1080,12 @@ body.light-theme{
 }
 
 /* For medium devices */
-@media screen and (min-wudth: 576px) {
+@media screen and (max-width: 576px) {
+
+  .home__handle{
+    margin-top: 2rem;
+  }
+
   .nav__menu{
     width: 328px;
     left: 0;
@@ -1170,6 +1138,7 @@ body.light-theme{
 }
 
 @media screen and (min-width: 767px) {
+
   .contact__container{
     grid-template-columns: repeat(2, max-content);
     justify-content: center;
