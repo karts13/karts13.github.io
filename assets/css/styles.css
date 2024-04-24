@@ -921,6 +921,15 @@ body.light-theme{
   padding: 1.5rem;
   border-radius: .75rem;
   z-index: 1;
+  border-color: var(--first-color);
+}
+
+.contact__form-input.invalid {
+  border-color: red; /* Border color for invalid input */
+}
+
+.contact__form-input.valid {
+  border-color: green; /* Border color for valid input */
 }
 
 .contact__form-tag{

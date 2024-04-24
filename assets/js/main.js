@@ -159,3 +159,21 @@ form.addEventListener('submit', e => {
       })
       .catch(error => console.error('Error!', error.message))
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+    var form = document.forms["submit-to-google-sheet"];
+    var inputs = form.querySelectorAll(".contact__form-input");
+
+    inputs.forEach(function(input) {
+        input.addEventListener("input", function() {
+            if (input.checkValidity()) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+            }
+        });
+    });
+});
+
