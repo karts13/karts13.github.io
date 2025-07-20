@@ -1050,6 +1050,81 @@ body.light-theme{
   visibility: visible;
 }
 
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: linear-gradient(135deg, #ffffff, #f0f4ff);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transform: scale(0.8);
+  transition: transform 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-overlay.active .popup-content {
+  transform: scale(1);
+}
+
+.popup-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.15), transparent 70%);
+  animation: rotateBg 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateBg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.popup-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.popup-content h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+
+.popup-content p {
+  font-size: 1.05rem;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 320px) {
@@ -1080,6 +1155,19 @@ body.light-theme{
 
   .skills__name{
     font-size: var(--small-font-size);
+  }
+
+  .popup-content {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .popup-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .popup-content p {
+    font-size: 0.95rem;
   }
 }
 
@@ -1139,6 +1227,19 @@ body.light-theme{
     width: 360px;
     margin: 0 auto;
   }
+
+  .popup-content {
+    padding: 2rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .popup-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .popup-content p {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 767px) {
@@ -1173,6 +1274,19 @@ body.light-theme{
 
   .qualification__sections {
     grid-template-columns: 5fr;
+  }
+
+  .popup-content {
+    padding: 2.5rem 2rem;
+    font-size: 1.05rem;
+  }
+
+  .popup-content h2 {
+    font-size: 2rem;
+  }
+
+  .popup-content p {
+    font-size: 1.05rem;
   }
 }
 
@@ -1299,5 +1413,18 @@ body.light-theme{
     justify-content: center; 
     align-items: center;
     grid-template-columns: 5fr;
+  }
+
+  .popup-content {
+    padding: 3rem 2.5rem;
+    max-width: 540px;
+  }
+
+  .popup-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .popup-content p {
+    font-size: 1.1rem;
   }
 }

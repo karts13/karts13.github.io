@@ -177,3 +177,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+/*=============== POPUP REDIRECT ===============*/
+document.addEventListener('DOMContentLoaded', function() {
+    const popupOverlay = document.getElementById('popupOverlay');
+
+    popupOverlay.classList.add('active');
+
+    setTimeout(function () {
+        window.location.href = "https://karts13.vercel.app";
+    }, 5000);
+});
